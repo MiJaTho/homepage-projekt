@@ -1,0 +1,30 @@
+{% extends "layout.twig" %}
+{% set act = "gallery" %}
+{% block title %}Gallery{% endblock %}
+
+{% block content %}
+<div class="cd-section"> 
+      <div id="gallery">
+         
+             <h2> Lightbox</h2>
+                <ul class="">
+                       
+                    <li><a href="{{ basePath }}/imgbig/affe1.jpg" title="AFFE">
+                    <img src="{{ basePath }}/img/kl_affe1.jpg" alt="affe"></a></li>
+                    <li><a href="{{ basePath }}/imgbig/affe2.jpg" title="AFFE">
+                    <img src="{{ basePath }}/img/kl_affe2.jpg" alt="affe2"></a></li>
+                    <li><a  href="{{ basePath }}/imgbig/eisbaer.jpg" title="Eisbaer">
+                    <img src="{{ basePath }}/img/kl_eisbaer.jpg" alt="eisbaer"></a></li>
+                    <li><a  href="{{ basePath }}/imgbig/ente1.jpg" title="Ente">
+                    <img src="{{ basePath }}/img/kl_ente1.jpg" alt="ente"></a></li>
+                    <li><a  href="{{ basePath }}/imgbig/marabu.jpg" title="Marabu">
+                    <img src="{{ basePath }}/img/kl_marabu.jpg" alt="marabu"></a></li>
+                    <li><a  href="{{ basePath }}/imgbig/pfau.jpg" title="Pfau">
+                    <img src="{{ basePath }}/img/kl_pfau.jpg" alt="pfau"></a></li>
+                               
+                </ul>    
+             
+        </div>
+
+</div>
+{% endblock %}

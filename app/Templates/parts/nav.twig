@@ -1,0 +1,21 @@
+<nav id="nav" class="cd-vertical-nav">
+
+  <a class="{% if act == 'home'  %} active {% endif %}" href="{{ basePath }}/home"><span class="label ">Home</span></a>
+  <a class="{% if act == 'gallery'  %} active {% endif %}" href="{{ basePath }}/gallery"><span class="label">Gallery</span></a>
+  <a class="{% if act == 'contakt'  %} active {% endif %}" href="{{ basePath }}/contakt"><span class="label">Kontakt</span></a>
+  <a class="{% if act == 'posts'  %} active {% endif %}" href="{{ basePath }}/posts"><span class="label">Gästebuch</span></a>
+  <a class="{% if act == 'resume'  %} active {% endif %}" href="{{ basePath }}/resume"><span class="label">Lebenslauf</span></a>
+  <a class="{% if act == 'portfolio'  %} active {% endif %}" href="{{ basePath }}/portfolio"><span class="label">Portfolio</span></a>
+  <a class="{% if act == 'imp'  %} active {% endif %}" href="{{ basePath }}/impressum"><span class="label">Impressum</span></a>
+  
+   {% if logged_in %}
+  <a class="label" href="{{ basePath }}/logout">Logout</a>
+  <a class="label" href="{{ basePath }}/users">Uers</a>
+   {% else %}
+  <a class="label" href="{{ basePath }}/login">Login</a>
+   {% endif %}
+  
+
+
+</nav>
+

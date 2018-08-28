@@ -1,0 +1,44 @@
+{% extends "layout.twig" %}
+{% set act = "posts" %}
+{% block title %}POSTLIST{% endblock %}
+
+{% block content %}
+{{ include('parts/add_post.twig') }}
+
+
+
+
+  <div class="ui large feed">
+
+    <div class="ui large header">
+      Postlist
+    </div>
+    {% if logged_in %}
+    {% for post in posts %}
+           <div class="creater">{{ post.screenname }}</div>
+            <div class="date">
+              {{ post.created_at|date("d. M H:i") }}
+            </div>
+            <div class="loeschen">
+
+                <a href="{{ basePath }}/posts/{{ post.id }}/delete">
+                <i class="ui remove icon delbtn" id="delbtn-{{ post.id }}"></i></a>
+                <a href="{{ basePath }}/posts/{{ post.id }}/edit">
+                <i class="ui edit icon delbtn" id="delbtn2-{{ post.id }}"></i></a>
+                
+          </div>
+          <div class="extra text">
+            <h3 class="">{{ post.title }}</h3>
+            {{ post.content}} 
+           <hr>
+          </div>
+            
+         {% endfor %}
+     
+         {% else %}
+        <h4>Place LOGIN!</h4>
+         {% endif %}
+       
+ </div>
+{% endblock %}
+

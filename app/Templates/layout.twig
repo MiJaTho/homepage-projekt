@@ -1,0 +1,36 @@
+<!DOCTYPE html> 
+<html lang="de">
+<head>
+    <title>{% block title %}Thomas Gizycki{% endblock %}</title>
+    {{ include('parts/head.twig') }}
+</head>
+
+<body>
+<div id="wrapper" >
+<header >
+<div id="headerlogo">
+<h2 class="logo"> <a href="{{ basePath }}/home">Gizycki</a></h2>
+</div>
+</header>
+
+<button class="cd-nav-trigger cd-image-replace">Open navigation<span aria-hidden="true"></span></button>
+
+<div id="time">
+    <span> Es ist Uhr:</span><div id="zeit"></div>
+    <span>Heute ist der:</span><div id="calendar"></div>
+        
+</div>
+    {{ include('parts/nav.twig') }}
+    <div class="cd-sektion">
+        {% if messages %}
+            {{ include('parts/messages.twig') }}
+        {% endif %}
+
+        {% block content %}
+            Content Block
+        {% endblock %}
+    </div>
+    {{ include('parts/foot.twig') }}
+</div>
+</body>
+</html>

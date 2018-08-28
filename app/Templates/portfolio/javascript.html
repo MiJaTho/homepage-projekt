@@ -1,0 +1,25 @@
+<pre id ="code1" class="prettyprint">
+    <h2> jQuery</h2>
+$("#neu")
+.find("input")
+.on("click", function(e){
+    e.preventDefault();    
+    var $neuerEintrag = $("#neuerEintrag");
+    var $li = $listen.find("li").eq(0).clone();
+    $li.contents().eq(4).replaceWith("&nbsp;" + $neuerEintrag.val().trim());
+    console.log($li);
+    switch(this.value.toLowerCase()) {
+        case "oben eintragen" : // Klasse oben ist bereits vorhanden
+        $li.appendTo($listen.eq(0))/* .removeClass().addClass("oben") */; 
+        break;
+        case "unten eintragen":
+        $li.appendTo($listen.eq(1)).removeClass().addClass("unten");
+        break;
+
+    }
+
+
+    $neuerEintrag.val("");
+
+}); // #neu input click  
+</pre>

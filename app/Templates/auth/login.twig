@@ -1,0 +1,41 @@
+{% extends "layout.twig" %}
+{% block content %}
+<div class="cd-section">
+    <div class="column">
+        <h2 >
+             Log In!
+        </h2>
+        <form class="ui large form" method="POST" action="{{ basePath }}/login">
+
+            {{ csrf_field|raw }}
+
+            <div class="">
+                <div class="field">
+                    <label for="username">Email</label>
+                    <div class="ui left icon input">
+                        <i class="user icon"></i>
+                        <input type="email" name="username" id="username" autocomplete="off" value="{{ old.username }}">
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="password">Password</label>
+                    <div class="ui left icon input">
+                        <i class="lock icon"></i>
+                        <input type="password" name="password" id="password" autocomplete="off">
+                    </div>
+                </div>
+                <input type="submit" class="ui fluid large blue submit button">
+            </div>
+        </form>
+        {% if error %}
+            <div class="ui error message">{{ error }}</div>
+        {% endif %}
+        <div class="ui message">
+            Don't have an account? <a href="{{ basePath }}/register">Sign Up here.</a>
+        </div>
+
+  </div>
+</div>
+
+
+{% endblock %}

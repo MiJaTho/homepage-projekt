@@ -1,0 +1,68 @@
+{% extends "layout.twig" %}
+{% set act = "contakt" %}
+{% block title %}Kontakt{% endblock %}
+
+{% block content %}
+
+<div class="cd-section">
+<div class="column">
+   <form class="ui large form" action="{{ basePath }}/contakt" method="POST">
+
+    {{ csrf_field|raw }}
+
+    <h2 class="">Kontakt aufnehmen</h2>
+    <div class="field">
+    
+        <label for="lastname">Name</label>
+        <input id="lastname" type="text" name="lastname">
+        <label for="name">vorname</label>
+        <input id ="name" type="text" name="name">
+        <label for="email">E-mail</label>
+        <input id="email" type="email" name="email">
+        <label class="block" for="formtext">Ihre Nachricht</label>
+        <textarea id="formtext" name="message" cols="30" rows="10" maxlength="1000" placeholder="Nachricht"></textarea>
+    </div>
+
+    <div class="field">
+        <label for="gender">Anrede</label>
+        <select name="gender" id="gender">
+            <option value="">-- Bitte wehlen --</option>
+                <option value="Frau">Frau</option>
+                <option value="Herr">Herr</option>
+        </select>
+    </div>
+    <input type="submit" class="ui fluid large blue submit button">
+</form>
+
+<div>
+  {% if logged_in %}
+        
+        <h2>Kontaktaufnahme</h2>
+     <table id="table">
+        
+       
+       
+        <thead>
+         <tr> <th> Kontakte </th> </tr> 
+         </thead> <tbody>
+         {% for contakt in contakts %}
+          <tr> <td>{{ contakt.lastname }}</td>
+         <td>{{ contakt.name }}</td> 
+         <td>{{ contakt.email }}</td> 
+         <td>{{ contakt.gender }}</td> 
+         <td>{{ contakt.message }}</td> </tr> 
+          {% endfor %}
+          </tbody>
+          
+          </table>
+        
+ 
+        </div>
+       
+         {% else %}
+        <h4>Place LOGIN!</h4>
+         {% endif %}
+
+   </div>
+</div>
+{% endblock %}
