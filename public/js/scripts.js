@@ -91,18 +91,6 @@ $('#php').click(function () {
       $( "#code2" ).slideUp("hide");
     }
   });
-// get code
-//  var $out = $("#out");
-
-//  $("#js").on("click", function (e) {
-//     e.preventDefault();
-//     $.ajax({
-//         url: "../app/templates/portfolio/javascript.html",
-//         success: function (data) {
-//             $out.empty().append(data);
-//         }
-//     });
-// });
 
 
 });   
